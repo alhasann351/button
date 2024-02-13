@@ -29,6 +29,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //snackBar
+  mySnackBar(context, msg) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          msg,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        action: SnackBarAction(
+          label: 'Dismiss',
+          textColor: Colors.white,
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +69,63 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text('Button'),
+      body: Center(
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                mySnackBar(context, 'Text Button Clicked...');
+              },
+              onLongPress: () {
+                mySnackBar(context, 'Long Press Clicked...');
+              },
+              child: Text(
+                'Text Button',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 20,
+                backgroundColor: Theme.of(context).primaryColor,
+              ),
+              onPressed: () {
+                mySnackBar(context, 'Elevated Button Clicked...');
+              },
+              onLongPress: () {
+                mySnackBar(context, 'Long Press Clicked...');
+              },
+              child: const Text(
+                'Elevated Button',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                mySnackBar(context, 'Outlined Button Clicked...');
+              },
+              onLongPress: () {
+                mySnackBar(context, 'Long Press Clicked...');
+              },
+              child: Text(
+                'Outlined Button',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
