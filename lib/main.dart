@@ -124,6 +124,94 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                alignment: Alignment.centerRight,
+                height: 60,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.red,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 50,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF211C6A),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.facebook,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        left: 10,
+                      ),
+                      child: Text(
+                        'Custom Button',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                alignment: Alignment.centerRight,
+                height: 60,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 50,
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.person_outline,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        left: 10,
+                      ),
+                      child: Text(
+                        'Custom Button 2',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
